@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="xyz.drafter.mybatis.dao.BlogMapper">
+	
+	<!--  只在该xml有用
+	<resultMap id="BolgResultMap" type="xyz.drafter.mybatis.pojo.Blog">
+		<result column="flag" property="flag" typeHandler="xyz.drafter.mybatis.handler.MyTypeHandler"/>
+	</resultMap>
+	-->
+    <select id="selectBlog" resultType="xyz.drafter.mybatis.pojo.Blog"
+            parameterType="int">
+		select * from blog  where id=#{id}
+	</select>
+</mapper>
