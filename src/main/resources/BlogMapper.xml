@@ -10,6 +10,12 @@
 		<result column="flag" property="flag" typeHandler="xyz.drafter.mybatis.handler.MyTypeHandler"/>
 	</resultMap>
 	-->
+	
+	<resultMap id="blogMap" type="Blog">
+		<constructor>
+			<arg column="hireDate" javaType="java.util.Date"/>
+		</constructor>
+	</resultMap>
     <select id="selectBlog" resultType="xyz.drafter.mybatis.pojo.Blog"
             parameterType="int">
 		select * from blog  where id=#{id}

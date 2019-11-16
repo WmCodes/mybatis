@@ -1,5 +1,8 @@
 package xyz.drafter.mybatis.pojo;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * @author wangmeng
  * @date 2019/11/6
@@ -11,6 +14,17 @@ public class Blog {
     private String memo;
     private Boolean flag;
 
+    // 入职时间 数据库中有
+    private Date hireDate;
+
+    //工作年限 数据库中午
+    private int workAge;
+
+    public Blog(Date hireDate) {
+        this.hireDate = hireDate;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+        this.workAge = Integer.valueOf(sdf.format(new Date()))- Integer.valueOf(sdf.format(hireDate));
+    }
 
     public Boolean getFlag() {
         return flag;
